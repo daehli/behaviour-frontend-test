@@ -29,7 +29,7 @@ class AddContact extends Component {
   }
 
   getValidationStateString(e) {
-    const re = /\w/gi
+    const re = /[a-zA-Z]/gi
     if (re.test(this.state[e])) {
       return 'success'
     }
@@ -39,7 +39,7 @@ class AddContact extends Component {
   getValidationStateInt(e) {
     const re = /\d/gi
     if (re.test(this.state[e])) {
-      if (this.state[e] == 0) {
+      if (this.state[e] === 0) {
         return 'error'
       }
       return 'success'
@@ -60,7 +60,7 @@ class AddContact extends Component {
   }
 
   validateObj(obj) {
-    var isReString = /\w/i
+    var isReString = /[a-zA-Z]/i
     var isReinteger = /\d/i
 
     if (isReString.test(obj.firstName) && isReString.test(obj.lastName) && isReinteger.test(obj.age)) {
