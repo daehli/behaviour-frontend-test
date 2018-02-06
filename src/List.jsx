@@ -24,7 +24,7 @@ class List extends Component {
   }
 
   componentWillMount() {
-    if (localStorage.length == 0) {
+    if (localStorage.length < 2) {
       localStorage.setItem('contacts', JSON.stringify([...initDB]))
     }
     this.setState({
