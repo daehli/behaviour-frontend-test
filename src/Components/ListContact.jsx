@@ -153,12 +153,9 @@ class TableContact extends Component {
       age: obj.age,
       onUpdateObj: Object.assign({}, { firstName: obj.firstName, lastName: obj.lastName, age: obj.age })
     })
-    console.log(obj)
-    console.log('Update')
   }
 
   onClose() {
-    console.log('onClose')
     this.setState({
       isUpdating: !this.state.isUpdating
     })

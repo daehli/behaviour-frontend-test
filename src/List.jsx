@@ -44,13 +44,11 @@ class List extends Component {
   onUpdateEvent(newObj, oldObj) {
     const deleteOldObj = this.state.contacts.map(x => {
       if (JSON.stringify(x) == JSON.stringify(oldObj)) {
-        console.log('YAYAYAYYA', newObj)
         return newObj
       }
       return x
     })
 
-    console.log(deleteOldObj)
     localStorage.setItem('contacts', JSON.stringify(deleteOldObj))
     this.setState({
       contacts: JSON.parse(localStorage.getItem('contacts'))

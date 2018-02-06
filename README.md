@@ -21,6 +21,8 @@ yarn start
 ```
 
 
+> If you have `this.state.props.contacts` is null probably your localStorage is already populated. This error occur went I initialize the data 
+
 ### Futur
 
 Probably I will add
