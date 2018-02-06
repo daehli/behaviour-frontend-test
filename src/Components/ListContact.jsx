@@ -38,24 +38,6 @@ const ListContact = props => {
   return list
 }
 
-const ListContactUpdate = props => {
-  return (
-    <tr>
-      <td>
-        <FieldGroup />
-      </td>
-      <td>
-        <FieldGroup />
-      </td>
-      <td>
-        <FieldGroup />
-      </td>
-      <td>
-        <Button /> <Button />
-      </td>
-    </tr>
-  )
-}
 const HeadRow = props => {
   return (
     <thead>
