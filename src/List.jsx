@@ -20,6 +20,7 @@ class List extends Component {
 
     this.onClickEvent = this.onClickEvent.bind(this)
     this.deleteContact = this.deleteContact.bind(this)
+    this.onUpdateEvent = this.onUpdateEvent.bind(this)
   }
 
   componentWillMount() {
@@ -35,6 +36,22 @@ class List extends Component {
     var arr = this.state.contacts
     arr.push(contact)
     localStorage.setItem('contacts', JSON.stringify([...arr]))
+    this.setState({
+      contacts: JSON.parse(localStorage.getItem('contacts'))
+    })
+  }
+
+  onUpdateEvent(newObj, oldObj) {
+    const deleteOldObj = this.state.contacts.map(x => {
+      if (JSON.stringify(x) == JSON.stringify(oldObj)) {
+        console.log('YAYAYAYYA', newObj)
+        return newObj
+      }
+      return x
+    })
+
+    console.log(deleteOldObj)
+    localStorage.setItem('contacts', JSON.stringify(deleteOldObj))
     this.setState({
       contacts: JSON.parse(localStorage.getItem('contacts'))
     })
@@ -56,7 +73,7 @@ class List extends Component {
   render() {
     return (
       <div>
-        <TableContact contacts={this.state.contacts} delete={this.deleteContact} />
+        <TableContact contacts={this.state.contacts} delete={this.deleteContact} onUpdate={this.onUpdateEvent} />
         <AddContact onClickParent={this.onClickEvent} />
       </div>
     )
