@@ -6,6 +6,7 @@
 
 - Node 8.5.0
 - Yarn or NPM
+- Browser
 **NPM**
 ```bash
 npm install
